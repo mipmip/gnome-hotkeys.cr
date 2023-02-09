@@ -3,7 +3,8 @@ PREFIX ?= /usr
 PO_LOCATION ?= po
 LOCALE_LOCATION ?= /share/locale
 
-all: desktop metainfo bindings build
+all: bindings build
+#all: desktop metainfo bindings build
 
 bindings: 
 #	$(CRYSTAL_LOCATION)shards install
