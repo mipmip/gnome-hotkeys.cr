@@ -8,7 +8,7 @@ require "./modules/functions/*"
 require "./modules/views/*"
 
 module Tiny::Stats
-  B_UI = Gtk::Builder.new_from_resource("/dev/geopjr/tinystats/ui/app.ui")
+  B_UI = Gtk::Builder.new_from_resource("/dev/geopjr/myhotkeys/ui/app.ui")
   CSS  = Gtk::CssProvider.new
 
   NOTEBOOK = Gtk::Notebook.cast(B_UI["tinyNotebook"])
@@ -27,9 +27,9 @@ module Tiny::Stats
   CPU_TOTAL = Gtk::Label.cast(B_UI["tinyCPUTotal"])
 
   # [Blueprint]: Lucky Action
-  B_L          = Gtk::Builder.new_from_resource("/dev/geopjr/tinystats/ui/compiled/lucky.ui")
+  B_L          = Gtk::Builder.new_from_resource("/dev/geopjr/myhotkeys/ui/compiled/lucky.ui")
   LUCKY_WINDOW = Gtk::Window.cast(B_L["luckyWindow"])
   LUCKY_LABEL  = Gtk::Label.cast(B_L["luckyLabel"])
 
-  APP = Gtk::Application.new("dev.geopjr.tinystats", Gio::ApplicationFlags::None)
+  APP = Gtk::Application.new("dev.geopjr.myhotkeys", Gio::ApplicationFlags::None)
 end

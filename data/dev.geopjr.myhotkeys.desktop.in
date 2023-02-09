@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
-StartupWMClass=tiny-stats
-Exec=tiny-stats %F
-Name=tiny-stats
+StartupWMClass=myhotkeys
+Exec=myhotkeys %F
+Name=myhotkeys
 GenericName=System Monitor
 Comment=Tiny hardware stats monitor
 Terminal=false
-Icon=dev.geopjr.tinystats
+Icon=dev.geopjr.myhotkeys
 Categories=Utility;
 Keywords=memory;cpu;network;monitor;

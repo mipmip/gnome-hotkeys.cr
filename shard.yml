@@ -1,12 +1,12 @@
-name: tiny-stats
-version: 1.0.0
+name: myhotkeys
+version: 0.1.0
 
 authors:
-  - Your Name <your@email>
+  - Pim Snel <post@pimsnel.com
 
 targets:
-  tiny-stats:
-    main: src/tiny-stats.cr
+  myhotkeys:
+    main: src/myhotkeys.cr
 
 dependencies:
   gtk4:

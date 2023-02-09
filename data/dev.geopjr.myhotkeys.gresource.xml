@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/dev/geopjr/tinystats">
+  <gresource prefix="/dev/geopjr/myhotkeys">
     <file compressed="true">css/style.css</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/dev.geopjr.tinystats.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/dev.geopjr.myhotkeys.svg</file>
     <file compressed="true" preprocess="xml-stripblanks">ui/app.ui</file>
 
     <!-- [Blueprint]: Lucky Action -->

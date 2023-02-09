@@ -1,11 +1,11 @@
-# Greek translations for dev.geopjr.tinystats package.
-# Copyright (C) 2022 THE dev.geopjr.tinystats'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the dev.geopjr.tinystats package.
+# Greek translations for dev.geopjr.myhotkeys package.
+# Copyright (C) 2022 THE dev.geopjr.myhotkeys'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the dev.geopjr.myhotkeys package.
 # Evan <geopjr@hom>, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dev.geopjr.tinystats\n"
+"Project-Id-Version: dev.geopjr.myhotkeys\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-02-24 08:43+0200\n"
 "PO-Revision-Date: 2022-07-11 16:39+0300\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/dev.geopjr.tinystats.desktop.in:6
-msgid "tiny-stats"
+#: data/dev.geopjr.myhotkeys.desktop.in:6
+msgid "myhotkeys"
 msgstr "μικροσκοπικά-στατιστικά"
 
-#: data/dev.geopjr.tinystats.desktop.in:7
+#: data/dev.geopjr.myhotkeys.desktop.in:7
 msgid "System Monitor"
 msgstr "Επισκόπηση Συστήματος"
 
-#: data/dev.geopjr.tinystats.desktop.in:8
-#: data/dev.geopjr.tinystats.metainfo.xml.in:6
+#: data/dev.geopjr.myhotkeys.desktop.in:8
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:6
 msgid "Tiny hardware stats monitor"
 msgstr "Μικροσκοπική επιτήρηση στατιστικών στοιχείων υλικού"
 
-#: data/dev.geopjr.tinystats.desktop.in:11
+#: data/dev.geopjr.myhotkeys.desktop.in:11
 msgid "memory;cpu;network;monitor;"
 msgstr "μνήμη;cpu;δίκτυο;επιτήρηση;"
 
-#: data/dev.geopjr.tinystats.metainfo.xml.in:4
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:4
 msgid "Tiny Stats"
 msgstr "Μικροσκοπικά Στατιστικά"
 
-#: data/dev.geopjr.tinystats.metainfo.xml.in:5
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:5
 msgid "Evangelos \"GeopJr\" Paterakis"
 msgstr "Ευάγγελος \"GeopJr\" Πατεράκης"
 
-#: data/dev.geopjr.tinystats.metainfo.xml.in:12
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:12
 msgid "Check your hardware stats with a tiny &amp; minimal system monitor!"
 msgstr "Ελέγξτε τα στατιστικά στοιχεία του υλικού σας με ένα μικροσκοπικό &amp; ελάχιστο monitor συστήματος!"
 

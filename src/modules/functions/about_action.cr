@@ -12,7 +12,7 @@ module Tiny::Stats
         application: APP,
         program_name: "Tiny Stats",
         version: VERSION,
-        logo_icon_name: "dev.geopjr.tinystats",
+        logo_icon_name: "dev.geopjr.myhotkeys",
         copyright: "© 2021 Evangelos Paterakis",
         website: "https://github.com/GeopJr/tiny-stats-template",
         authors: ["Evangelos \"GeopJr\" Paterakis"],

@@ -1,7 +1,7 @@
 <p align="center">
-  <img width="256" alt="tiny-stats logo" src="./data/icons/dev.geopjr.tinystats.svg" />
+  <img width="256" alt="tiny-stats logo" src="./data/icons/dev.geopjr.myhotkeys.svg" />
 </p>
-<h1 align="center">tiny-stats</h1>
+<h1 align="center">My Hotkeys</h1>
 <h4 align="center">A tiny system monitor used as a template for GTK4 + Crystal apps</h4>
 
 <p align="center">

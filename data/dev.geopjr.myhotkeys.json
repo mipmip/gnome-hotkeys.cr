@@ -1,9 +1,9 @@
 {
-	"app-id": "dev.geopjr.tinystats",
+	"app-id": "dev.geopjr.myhotkeys",
 	"runtime": "org.gnome.Platform",
 	"runtime-version": "41",
 	"sdk": "org.gnome.Sdk",
-	"command": "tiny-stats",
+	"command": "myhotkeys",
 	"finish-args": [
 		"--socket=wayland",
 		"--socket=fallback-x11",
@@ -40,26 +40,26 @@
 			]
 		},
 		{
-			"name": "tinystats",
+			"name": "myhotkeys",
 			"buildsystem": "simple",
 			"build-options": {
-				"append-path": "/run/build/tinystats/crystal/bin/"
+				"append-path": "/run/build/myhotkeys/crystal/bin/"
 			},
 			"build-commands": [
 				"for i in ./lib/*/; do ln -snf \"..\" \"$i/lib\"; done",
 				"cd lib/gi-crystal && crystal build src/generator/main.cr && cd ../.. && mkdir ./bin && cp lib/gi-crystal/main ./bin/gi-crystal",
 				"./bin/gi-crystal",
-				"TINY_LOCALE_LOCATION=\"/app/share/locale\" ./crystal/bin/crystal build ./src/tiny-stats.cr -Dpreview_mt --no-debug --release",
-				"msgfmt --xml --template data/dev.geopjr.tinystats.metainfo.xml.in -d \"./po\" -o data/dev.geopjr.tinystats.metainfo.xml",
-				"msgfmt --desktop --template data/dev.geopjr.tinystats.desktop.in -d \"./po\" -o data/dev.geopjr.tinystats.desktop",
-				"mkdir -p po/mo && for lang in `cat \"po/LINGUAS\"`; do if [[ \"$lang\" == 'en' || \"$lang\" == '' ]]; then continue; fi; mkdir -p \"/app/share/locale/$lang/LC_MESSAGES\"; msgfmt \"po/$lang.po\" -o \"po/mo/$lang.mo\";  install -D -m 0644 \"po/mo/$lang.mo\" \"/app/share/locale/$lang/LC_MESSAGES/dev.geopjr.tinystats.mo\"; done"
+				"TINY_LOCALE_LOCATION=\"/app/share/locale\" ./crystal/bin/crystal build ./src/myhotkeys.cr -Dpreview_mt --no-debug --release",
+				"msgfmt --xml --template data/dev.geopjr.myhotkeys.metainfo.xml.in -d \"./po\" -o data/dev.geopjr.myhotkeys.metainfo.xml",
+				"msgfmt --desktop --template data/dev.geopjr.myhotkeys.desktop.in -d \"./po\" -o data/dev.geopjr.myhotkeys.desktop",
+				"mkdir -p po/mo && for lang in `cat \"po/LINGUAS\"`; do if [[ \"$lang\" == 'en' || \"$lang\" == '' ]]; then continue; fi; mkdir -p \"/app/share/locale/$lang/LC_MESSAGES\"; msgfmt \"po/$lang.po\" -o \"po/mo/$lang.mo\";  install -D -m 0644 \"po/mo/$lang.mo\" \"/app/share/locale/$lang/LC_MESSAGES/dev.geopjr.myhotkeys.mo\"; done"
 			],
 			"post-install": [
-				"install -D -m 0755 tiny-stats /app/bin/tiny-stats",
-				"install -D -m 0644 data/dev.geopjr.tinystats.desktop /app/share/applications/dev.geopjr.tinystats.desktop",
-				"install -D -m 0644 data/icons/dev.geopjr.tinystats.svg /app/share/icons/hicolor/scalable/apps/dev.geopjr.tinystats.svg",
-				"install -D -m 0644 data/icons/dev.geopjr.tinystats-symbolic.svg /app/share/icons/hicolor/symbolic/apps/dev.geopjr.tinystats-symbolic.svg",
-				"install -D -m 0644 data/dev.geopjr.tinystats.metainfo.xml /app/share/metainfo/dev.geopjr.tinystats.metainfo.xml"
+				"install -D -m 0755 myhotkeys /app/bin/myhotkeys",
+				"install -D -m 0644 data/dev.geopjr.myhotkeys.desktop /app/share/applications/dev.geopjr.myhotkeys.desktop",
+				"install -D -m 0644 data/icons/dev.geopjr.myhotkeys.svg /app/share/icons/hicolor/scalable/apps/dev.geopjr.myhotkeys.svg",
+				"install -D -m 0644 data/icons/dev.geopjr.myhotkeys-symbolic.svg /app/share/icons/hicolor/symbolic/apps/dev.geopjr.myhotkeys-symbolic.svg",
+				"install -D -m 0644 data/dev.geopjr.myhotkeys.metainfo.xml /app/share/metainfo/dev.geopjr.myhotkeys.metainfo.xml"
 			],
 			"sources": [
 				{
@@ -69,10 +69,10 @@
 						".rucksack",
 						".rucksack.toc",
 						"lib/",
-						"tiny-stats",
+						"myhotkeys",
 						"bin/",
-						"data/dev.geopjr.tinystats.desktop",
-						"data/dev.geopjr.tinystats.gresource",
+						"data/dev.geopjr.myhotkeys.desktop",
+						"data/dev.geopjr.myhotkeys.gresource",
 						"po/mo/"
 					]
 				},

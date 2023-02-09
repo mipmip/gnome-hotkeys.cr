@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>dev.geopjr.tinystats</id>
+  <id>dev.geopjr.myhotkeys</id>
   <name>Tiny Stats</name>
   <developer_name>Evangelos "GeopJr" Paterakis</developer_name>
   <summary>Tiny hardware stats monitor</summary>
   <metadata_license>CC0-1.0</metadata_license>
-  <url type="homepage">https://github.com/GeopJr/tiny-stats-template</url>
-  <url type="bugtracker">https://github.com/GeopJr/tiny-stats-template/issues</url>
+  <url type="homepage">https://github.com/GeopJr/myhotkeys-template</url>
+  <url type="bugtracker">https://github.com/GeopJr/myhotkeys-template/issues</url>
   <url type="donation">https://geopjr.dev/donate</url>
   <description>
     <p>

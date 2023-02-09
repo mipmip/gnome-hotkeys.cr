@@ -17,32 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/dev.geopjr.tinystats.desktop.in:6
+#: data/dev.geopjr.myhotkeys.desktop.in:6
 msgid "tiny-stats"
 msgstr ""
 
-#: data/dev.geopjr.tinystats.desktop.in:7
+#: data/dev.geopjr.myhotkeys.desktop.in:7
 msgid "System Monitor"
 msgstr ""
 
-#: data/dev.geopjr.tinystats.desktop.in:8
-#: data/dev.geopjr.tinystats.metainfo.xml.in:6
+#: data/dev.geopjr.myhotkeys.desktop.in:8
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:6
 msgid "Tiny hardware stats monitor"
 msgstr ""
 
-#: data/dev.geopjr.tinystats.desktop.in:11
+#: data/dev.geopjr.myhotkeys.desktop.in:11
 msgid "memory;cpu;network;monitor;"
 msgstr ""
 
-#: data/dev.geopjr.tinystats.metainfo.xml.in:4
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:4
 msgid "Tiny Stats"
 msgstr ""
 
-#: data/dev.geopjr.tinystats.metainfo.xml.in:5
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:5
 msgid "Evangelos \"GeopJr\" Paterakis"
 msgstr ""
 
-#: data/dev.geopjr.tinystats.metainfo.xml.in:12
+#: data/dev.geopjr.myhotkeys.metainfo.xml.in:12
 msgid "Check your hardware stats with a tiny &amp; minimal system monitor!"
 msgstr ""
 
