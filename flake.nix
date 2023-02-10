@@ -27,8 +27,6 @@
 
           devShells.default = nixpkgs.pkgs.mkShell {
             buildInputs = with nixpkgs.pkgs; [
-
-              #crystalflake-pkg.crystal
               crystal
               shards
               blueprint-compiler
@@ -50,7 +48,6 @@
               pkg-config
               wrapGAppsHook4
               cmake
-
             ];
 
             nativeBuildInputs = with nixpkgs.pkgs; [

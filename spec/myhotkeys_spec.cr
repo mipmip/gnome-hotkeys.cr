@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Tiny::Stats do
+describe MyHotKeys::GtkMain do
   # TODO: Write tests
 
   it "works" do
