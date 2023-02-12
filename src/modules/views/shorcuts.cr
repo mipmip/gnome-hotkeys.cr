@@ -6,12 +6,17 @@ module MyHotKeys::GtkMain
     accel = accel.gsub("<SUPER>","&lt;Super&gt;")
     accel = accel.gsub("<SHIFT>","&lt;Shift&gt;")
     accel = accel.gsub("<META>","&lt;Meta&gt;")
-    p accel
+    #p accel
     accel
   end
 
   def read_shortcuts
-    yaml = File.open("/home/pim/.hotkeys-popup-custom2.json") { |file| YAML.parse(file) }
+
+    conf_path = ARGV[1]
+    unless File.exists?(conf_path)
+      conf_path = "/home/pim/.hotkeys-popup-custom2.json"
+    end
+    yaml = File.open(conf_path) { |file| YAML.parse(file) }
     keyGroups = yaml.as_a
     keyGroups
   end
@@ -75,7 +80,7 @@ module MyHotKeys::GtkMain
 </interface>
 XML
   ui
-  p ui
+  #p ui
   end
 end
 

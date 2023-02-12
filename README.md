@@ -12,6 +12,7 @@
 - [ ] compile UI at runtime
 - [ ] solution for displaying command words (custom widget)
 - [ ] max-height config
+- [ ] play in builder to find all possibilyties
 - [ ] input file argument
 - [ ] forward slash
 - [ ] backtick

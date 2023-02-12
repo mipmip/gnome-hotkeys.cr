@@ -6,6 +6,13 @@ module MyHotKeys::GtkMain
     openShortcutsPopup
   end
 
+  def open_file(app : Gtk::Application)
+    p "Hallo"
+  end
+  def command_line(cl : Gio::ApplicationCommandLine)
+    p "Hallo"
+  end
+
   def openShortcutsPopup
     shortcutsWindowUI = makeShortcutsUI
     p ARGV
