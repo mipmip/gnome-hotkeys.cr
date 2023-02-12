@@ -14,13 +14,33 @@ module MyHotKeys::GtkMain
 
     conf_path = ARGV[1]
     unless File.exists?(conf_path)
-      conf_path = "/home/pim/.hotkeys-popup-custom2.json"
+      conf_path = "/home/pim/.hotkeys-popup-custom.json"
     end
     yaml = File.open(conf_path) { |file| YAML.parse(file) }
     keyGroups = yaml.as_a
     keyGroups
   end
 
+  def createAccelCheat(description, key)
+    <<-sXML
+      <child>
+        <object class="GtkShortcutsShortcut">
+          <property name="title" translatable="yes" context="shortcut window">#{description}</property>
+          <property name="accelerator">#{key}</property>
+        </object>
+      </child>
+    sXML
+  end
+
+  def createCommandCheat(description, command)
+    <<-sXML
+      <child>
+        <object class="GtkLabel">
+          <property name="label" translatable="yes" context="shortcut window">xxx#{description}</property>
+        </object>
+      </child>
+    sXML
+  end
 
   def createXMLGroups(keyGroups)
     pGroups = [] of String
@@ -31,18 +51,18 @@ module MyHotKeys::GtkMain
       pShortcuts = [] of String
       shortcuts.each do | shortcut|
         description = shortcut["description"].as_s
-        rawKey = shortcut["key"].as_s
-        key = parse_accelerator(shortcut["key"].as_s)
 
-        shortcutXML = <<-sXML
-          <child>
-            <object class="GtkShortcutsShortcut">
-              <property name="title" translatable="yes" context="shortcut window">#{description}</property>
-              <property name="accelerator">#{key}</property>
-            </object>
-          </child>
-        sXML
-        pShortcuts << shortcutXML
+        shortcutXML = ""
+        if shortcut.as_h.has_key?("key")
+          rawKey = shortcut["key"].as_s
+          key = parse_accelerator(shortcut["key"].as_s)
+          shortcutXML = createAccelCheat(description, key)
+        elsif shortcut.as_h.has_key?("command")
+          command = shortcut["command"].as_s
+          shortcutXML = createCommandCheat(description, command)
+        end
+
+        pShortcuts << shortcutXML if shortcutXML != ""
       end
 
       groupXML = <<-gXML
