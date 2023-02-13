@@ -35,8 +35,17 @@ module MyHotKeys::GtkMain
   def createCommandCheat(description, command)
     <<-sXML
       <child>
-        <object class="GtkLabel">
-          <property name="label" translatable="yes" context="shortcut window">xxx#{description}</property>
+        <object class="GtkBox">
+          <child>
+            <object class="GtkLabel">
+              <property name="label" translatable="yes" context="shortcut window">#{command}</property>
+            </object>
+          </child>
+          <child>
+            <object class="GtkLabel">
+              <property name="label" translatable="yes" context="shortcut window">#{description}</property>
+            </object>
+          </child>
         </object>
       </child>
     sXML

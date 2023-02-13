@@ -3,7 +3,7 @@
         "name": "Gnome Extra",
         "shortcuts": [
             {
-                "key": "<ALT>`",
+                "command": "hatchee",
                 "description": "Cycle windows within same Application"
             }
         ]
@@ -12,7 +12,7 @@
         "name": "Lanceerders",
         "shortcuts": [
             {
-                "key": "<SUPER>Return",
+                "command": "hoppa",
                 "description": "Terminal"
             },
             {
