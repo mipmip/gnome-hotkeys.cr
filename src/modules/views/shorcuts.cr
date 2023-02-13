@@ -25,7 +25,7 @@ module MyHotKeys::GtkMain
     <<-sXML
       <child>
         <object class="GtkShortcutsShortcut">
-          <property name="title" translatable="yes" context="shortcut window">#{description}</property>
+          <property name="title"  context="shortcut window">#{description}</property>
           <property name="accelerator">#{key}</property>
         </object>
       </child>
@@ -36,9 +36,14 @@ module MyHotKeys::GtkMain
     <<-sXML
       <child>
         <object class="GtkBox">
+          <property name="spacing">12</property>
           <child>
             <object class="GtkLabel">
               <property name="label" translatable="yes" context="shortcut window">#{command}</property>
+              <property name="margin-end">110</property>
+              <attributes>
+                <attribute name="font-desc" value="Monospace"/>
+              </attributes>
             </object>
           </child>
           <child>

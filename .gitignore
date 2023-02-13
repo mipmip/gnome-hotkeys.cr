@@ -12,3 +12,5 @@ po/mo/
 data/*.desktop
 data/*.metainfo.xml
 data/ui/compiled/
+.temp.seed
+.temp.html
