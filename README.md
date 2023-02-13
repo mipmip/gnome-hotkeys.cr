@@ -35,6 +35,8 @@ make
 - [x] forward slash (slash)
 - [x] backtick (grave)
 - [x] play in builder to find all possibilities
+- [ ] change YAML to JSON class
+- [ ] setup cli options
 - [ ] subclass shortcutsshortcut.c
   - [ ] accel-size-group
   - [ ] title-size-group
