@@ -35,8 +35,12 @@ make
 - [x] forward slash (slash)
 - [x] backtick (grave)
 - [x] play in builder to find all possibilities
-- [ ] change YAML to JSON class
-- [ ] setup cli options
+- [x] change YAML to JSON class
+- [x] setup cli options
+- [ ] add gnome extensions and desktop shortcuts
+  - [x] read settings from GIO
+  - [ ] implement hide settings from conf or argument
+- [ ] shell releaser
 - [ ] subclass shortcutsshortcut.c
   - [ ] accel-size-group
   - [ ] title-size-group
@@ -44,7 +48,6 @@ make
   - [ ] search match group titles for single shortcuts
 - [ ] subclass more
   - [ ] make custom layout things: semi trans and more
-- [ ] add gnome extensions and desktop shortcuts
 - [ ] max-height config
 - [ ] find way to clear UI cache
 - [ ] documentation
@@ -55,7 +58,8 @@ make
 - [ ] control ordering
 - [ ] more sections...?
 - [ ] name
-  - cheat
+  - gnome-cheat
+  - gnome-hotkey
 
 ## ROADMAP 2.0
 - current application aware

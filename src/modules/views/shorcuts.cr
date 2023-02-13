@@ -1,27 +1,31 @@
 module MyHotKeys::GtkMain
 
   def parse_accelerator(accel)
+    accel = accel.gsub("<Ctrl>","&lt;Ctrl&gt;")
+    accel = accel.gsub("<Control>","&lt;Control&gt;")
+    accel = accel.gsub("<Primary>","&lt;Primary&gt;")
+    accel = accel.gsub("<Alt>","&lt;Alt&gt;")
+    accel = accel.gsub("<Super>","&lt;Super&gt;")
+    accel = accel.gsub("<Shift>","&lt;Shift&gt;")
+    accel = accel.gsub("<Meta>","&lt;Meta&gt;")
     accel = accel.gsub("<CTRL>","&lt;Ctrl&gt;")
     accel = accel.gsub("<ALT>","&lt;Alt&gt;")
     accel = accel.gsub("<SUPER>","&lt;Super&gt;")
     accel = accel.gsub("<SHIFT>","&lt;Shift&gt;")
     accel = accel.gsub("<META>","&lt;Meta&gt;")
-    #p accel
     accel
   end
 
-  def read_shortcuts
-
-    conf_path = ARGV[1]
-    unless File.exists?(conf_path)
-      conf_path = "/home/pim/.hotkeys-popup-custom.json"
-    end
-    yaml = File.open(conf_path) { |file| YAML.parse(file) }
-    keyGroups = yaml.as_a
+  def read_shortcuts(shortcut_file)
+    p shortcut_file
+    json = File.open(shortcut_file) { |file| JSON.parse(file) }
+    keyGroups = json.as_a
     keyGroups
   end
 
-  def createAccelCheat(description, key)
+  def createAccelCheat(description, keyin)
+    key = parse_accelerator(keyin)
+    p key
     <<-sXML
       <child>
         <object class="GtkShortcutsShortcut">
@@ -56,30 +60,44 @@ module MyHotKeys::GtkMain
     sXML
   end
 
-  def createXMLGroups(keyGroups)
-    pGroups = [] of String
-    keyGroups.each do | group |
-      g = group.as_h
-      name = g["name"].as_s
-      shortcuts = g["shortcuts"].as_a
-      pShortcuts = [] of String
-      shortcuts.each do | shortcut|
-        description = shortcut["description"].as_s
+  def createXMLGroupFromGio(name, shortcuts)
 
-        shortcutXML = ""
-        if shortcut.as_h.has_key?("key")
-          rawKey = shortcut["key"].as_s
-          key = parse_accelerator(shortcut["key"].as_s)
-          shortcutXML = createAccelCheat(description, key)
-        elsif shortcut.as_h.has_key?("command")
-          command = shortcut["command"].as_s
-          shortcutXML = createCommandCheat(description, command)
-        end
+    pShortcuts = [] of String
 
-        pShortcuts << shortcutXML if shortcutXML != ""
+    shortcuts = shortcuts[0..MAX_HEIGHT] if shortcuts.size > MAX_HEIGHT
+    shortcuts.each do | shortcut|
+      description = shortcut["description"]
+      shortcutXML = ""
+      shortcutXML = createAccelCheat(description, shortcut["key"])
+
+      pShortcuts << shortcutXML if shortcutXML != ""
+    end
+
+    makeGroupXML(name, pShortcuts)
+  end
+
+  def createXMLGroupFromJson(group)
+    g = group.as_h
+    shortcuts = g["shortcuts"].as_a
+    pShortcuts = [] of String
+    shortcuts.each do | shortcut|
+      description = shortcut["description"].as_s
+      shortcutXML = ""
+      if shortcut.as_h.has_key?("key")
+        shortcutXML = createAccelCheat(description, shortcut["key"].as_s)
+      elsif shortcut.as_h.has_key?("command")
+        command = shortcut["command"].as_s
+        shortcutXML = createCommandCheat(description, command)
       end
 
-      groupXML = <<-gXML
+      pShortcuts << shortcutXML if shortcutXML != ""
+    end
+    makeGroupXML(group["name"].as_s, pShortcuts)
+
+  end
+
+  def makeGroupXML(name, pShortcuts)
+    <<-gXML
         <child>
           <object class="GtkShortcutsGroup">
             <property name="title" translatable="yes" context="shortcut window">#{name}</property>
@@ -87,16 +105,23 @@ module MyHotKeys::GtkMain
           </object>
         </child>
       gXML
-      pGroups << groupXML
-    end
-
-    pGroups.join("")
-
   end
 
-  def makeShortcutsUI
-    keyGroups = read_shortcuts
-    innerXML = createXMLGroups(keyGroups)
+  def makeShortcutsUI(shortcut_file)
+
+    pGroups = [] of String
+
+    SCHEMAS.each do |schema|
+      shortcuts = gnome_schema_keys(schema)
+      pGroups << createXMLGroupFromGio(translate_schema_name(schema.to_s), gnome_schema_keys(schema))
+    end
+
+    keyGroups = read_shortcuts(shortcut_file)
+    keyGroups.each do | group |
+      pGroups << createXMLGroupFromJson(group)
+    end
+
+    innerXML = pGroups.join("")
 
     ui = <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,7 +131,7 @@ module MyHotKeys::GtkMain
     <child>
       <object class="GtkShortcutsSection">
         <property name="section-name">shortcuts</property>
-        <property name="max-height">20</property>
+        <property name="max-height">#{MAX_HEIGHT.to_s}</property>
         #{innerXML}
       </object>
     </child>
