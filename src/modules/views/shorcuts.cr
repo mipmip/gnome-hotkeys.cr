@@ -17,7 +17,6 @@ module MyHotKeys::GtkMain
   end
 
   def read_shortcuts(shortcut_file)
-    p shortcut_file
     json = File.open(shortcut_file) { |file| JSON.parse(file) }
     keyGroups = json.as_a
     keyGroups
@@ -25,7 +24,6 @@ module MyHotKeys::GtkMain
 
   def createAccelCheat(description, keyin)
     key = parse_accelerator(keyin)
-    p key
     <<-sXML
       <child>
         <object class="GtkShortcutsShortcut">
