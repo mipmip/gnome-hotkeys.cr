@@ -11,7 +11,7 @@ targets:
 dependencies:
   gtk4:
     github: hugopl/gtk4.cr
-    branch: master
+    branch: main
 
 crystal: 1.4.1
 license: MIT

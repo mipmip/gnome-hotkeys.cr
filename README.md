@@ -37,19 +37,26 @@ make
 - [x] play in builder to find all possibilities
 - [x] change YAML to JSON class
 - [x] setup cli options
+
+- [ ] derivation
+
 - [ ] add gnome extensions and desktop shortcuts
   - [x] read settings from GIO
   - [ ] implement hide settings from conf or argument
+
 - [ ] shell releaser
 - [ ] subclass shortcutsshortcut.c
   - [ ] accel-size-group
   - [ ] title-size-group
   - [ ] new type: command
   - [ ] search match group titles for single shortcuts
+
 - [ ] subclass more
   - [ ] make custom layout things: semi trans and more
+
 - [ ] max-height config
 - [ ] find way to clear UI cache
+
 - [ ] documentation
 - [ ] intergrate with shell extension
 - [ ] add buttons to menubar
@@ -57,9 +64,11 @@ make
   - [ ] configure
 - [ ] control ordering
 - [ ] more sections...?
+
 - [ ] name
   - gnome-cheat
   - gnome-hotkey
+  - hotcheat
 
 ## ROADMAP 2.0
 - current application aware

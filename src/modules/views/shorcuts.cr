@@ -109,9 +109,11 @@ module MyHotKeys::GtkMain
 
     pGroups = [] of String
 
-    SCHEMAS.each do |schema|
-      shortcuts = gnome_schema_keys(schema)
-      pGroups << createXMLGroupFromGio(translate_schema_name(schema.to_s), gnome_schema_keys(schema))
+    if STATE.use_gnome_schema?
+      SCHEMAS.each do |schema|
+        shortcuts = gnome_schema_keys(schema)
+        pGroups << createXMLGroupFromGio(translate_schema_name(schema.to_s), gnome_schema_keys(schema))
+      end
     end
 
     keyGroups = read_shortcuts(shortcut_file)

@@ -7,6 +7,7 @@ module MyHotKeys::GtkMain
 
   def openShortcutsPopup
     shortcut_file = STATE.shortcut_file
+    p shortcut_file
     if File.exists?(shortcut_file)
       shortcutsWindowUI = makeShortcutsUI(shortcut_file)
       shortcutsWindow = Gtk::Builder.new_from_string(shortcutsWindowUI, shortcutsWindowUI.size.to_i64)

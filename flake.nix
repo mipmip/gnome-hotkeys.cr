@@ -2,9 +2,8 @@
   description = "Nix development dependencies for crystal and gtk";
 
   inputs = {
-    nixpkgs.url = github:nixos/nixpkgs/nixos-22.11;
+    nixpkgs.url = github:nixos/nixpkgs/nixos-24.05;
     flake-utils.url = github:numtide/flake-utils;
-    crystal-flake.url = github:manveru/crystal-flake;
   };
 
   outputs = inputs:
@@ -21,7 +20,6 @@
             inherit system;
           };
 
-          crystalflake-pkg = inputs.crystal-flake.packages.${system};
         in
         {
 
