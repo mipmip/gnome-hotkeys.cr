@@ -11,7 +11,7 @@
 }:
 crystal.buildCrystalPackage rec {
   pname = "myhotkeys";
-  version = "0.2.2";
+  version = "0.2.3";
 
   src = ./.;
 
