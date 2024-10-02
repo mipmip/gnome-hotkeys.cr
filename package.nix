@@ -11,16 +11,9 @@
 }:
 crystal.buildCrystalPackage rec {
   pname = "myhotkeys";
-  version = "0.2.3";
+  version = "0.2.4";
 
   src = ./.;
-
-#  src = fetchFromGitHub {
-#    owner = "mipmip";
-#    repo = "gnome-hotkeys.cr";
-#    rev = "v${version}";
-#    hash = "";
-#  };
 
   nativeBuildInputs = [ wrapGAppsHook4 gobject-introspection ];
   buildInputs = [ gtk4 libadwaita ];

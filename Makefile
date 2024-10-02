@@ -26,7 +26,7 @@ test:
 install:
 	install -D -m 0755 bin/myhotkeys $(DESTDIR)$(PREFIX)/bin/myhotkeys
 	install -D -m 0644 myhotkeys.desktop $(DESTDIR)$(PREFIX)/share/applications/io.github.mipmip.myhotkeys.desktop
-	install -D -m 0644 data/io.github.hugopl.myhotkeys.svg $(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/io.github.hugopl.myhotkeys.svg
+	install -D -m 0644 data/io.github.mipmip.myhotkeys.svg $(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/io.github.mipmip.myhotkeys.svg
 
 	# Settings schema
 	#install -D -m644 data/gschema.xml $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas/io.github.hugopl.myhotkeys.gschema.xml

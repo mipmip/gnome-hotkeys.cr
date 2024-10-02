@@ -40,10 +40,10 @@ make
 
 - [ ] nix derivation
 
-- [ ] name
-  - gnome-cheat
-  - gnome-hotkey
-  - hotcheat
+- [ ] default shortcut_file
+- [ ] default config file
+
+- [ ] name: myhotkeys
 
 - dark mode
 - icon
