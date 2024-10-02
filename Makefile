@@ -11,8 +11,8 @@ configure:
 
 #all: bindings build
 
-bindings:
-	./bin/gi-crystal --no-doc
+#bindings:
+#	./bin/gi-crystal --no-doc
 
 build:
 	APP_LOCALE_LOCATION="$(PREFIX)$(LOCALE_LOCATION)" $(CRYSTAL_LOCATION)shards build -Dpreview_mt --no-debug
@@ -25,10 +25,12 @@ test:
 
 install:
 	install -D -m 0755 bin/myhotkeys $(DESTDIR)$(PREFIX)/bin/myhotkeys
-	#install -D -m 0644 myhotkeys.desktop $(DESTDIR)$(PREFIX)/share/applications/io.github.hugopl.myhotkeys.desktop
-	#install -D -m 0644 data/io.github.hugopl.myhotkeys.svg $(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/io.github.hugopl.myhotkeys.svg
+	install -D -m 0644 myhotkeys.desktop $(DESTDIR)$(PREFIX)/share/applications/io.github.mipmip.myhotkeys.desktop
+	install -D -m 0644 data/io.github.hugopl.myhotkeys.svg $(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/io.github.hugopl.myhotkeys.svg
+
 	# Settings schema
 	#install -D -m644 data/gschema.xml $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas/io.github.hugopl.myhotkeys.gschema.xml
+
 	# Data
 	#cp -r data/icons $(DESTDIR)$(PREFIX)/share/myhotkeys/
 
@@ -36,8 +38,8 @@ install:
 	install -D -m0644 CHANGELOG.md $(DESTDIR)$(PREFIX)/share/doc/myhotkeys/CHANGELOG.md
 	gzip -9fn $(DESTDIR)$(PREFIX)/share/doc/myhotkeys/CHANGELOG.md
 
-#post-install:
-#	gtk4-update-icon-cache --ignore-theme-index $(DESTDIR)$(PREFIX)/share/icons/hicolor
+post-install:
+	gtk4-update-icon-cache --ignore-theme-index $(DESTDIR)$(PREFIX)/share/icons/hicolor
 #	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
 
 #uninstall:

@@ -28,6 +28,7 @@
         {
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
+              gi-crystal
               crystal
               shards
               wrapGAppsHook4

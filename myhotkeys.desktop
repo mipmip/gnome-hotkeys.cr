@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Exec=myhotkeys %F
+Name=My Hotkeys
+GenericName=myhotkeys
+Terminal=false
+Icon=io.github.mipmip.myhotkeys
+Categories=Documentation;
+MimeType=text/plain;
+Keywords=text;documentation;hotkeys;shortcuts
+Actions=new-window;
+
+[Desktop Action new-window]
+Name=My Hotkeys
+Exec=myhotkeys

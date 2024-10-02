@@ -2,8 +2,12 @@
 , lib
 , fetchFromGitHub
 , crystal
+, shards
 , wrapGAppsHook4
-, gi-crystal
+, gobject-introspection
+, gtk4
+, libadwaita
+, dnsutils
 }:
 crystal.buildCrystalPackage rec {
   pname = "myhotkeys";
@@ -18,15 +22,26 @@ crystal.buildCrystalPackage rec {
 #    hash = "";
 #  };
 
-  nativeBuildInputs = [ wrapGAppsHook4 gi-crystal ];
-  buildInputs = [ ];
+  nativeBuildInputs = [ wrapGAppsHook4 gobject-introspection ];
+  buildInputs = [ gtk4 libadwaita ];
+
+  postPatch = ''
+    substituteInPlace Makefile \
+      --replace-fail "shards install" "true"
+  '';
+
+  preBuild = ''
+    cd lib/gi-crystal && shards build -Dpreview_mt --release --no-debug
+    cd ../.. && mkdir bin/ && cp lib/gi-crystal/bin/gi-crystal bin/
+  '';
 
   buildTargets = [ "all" ];
   doCheck = false;
 
   shardsFile = ./shards.nix;
+  copyShardDeps = true;
 
-  #installTargets = [ "install" "install-fonts"];
+  #installTargets = [ "install" ];
   doInstallCheck = false;
 
   meta = with lib; {
