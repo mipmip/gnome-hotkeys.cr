@@ -38,7 +38,15 @@ make
 - [x] change YAML to JSON class
 - [x] setup cli options
 
-- [ ] derivation
+- [ ] nix derivation
+
+- [ ] name
+  - gnome-cheat
+  - gnome-hotkey
+  - hotcheat
+
+- dark mode
+- icon
 
 - [ ] add gnome extensions and desktop shortcuts
   - [x] read settings from GIO
@@ -65,10 +73,6 @@ make
 - [ ] control ordering
 - [ ] more sections...?
 
-- [ ] name
-  - gnome-cheat
-  - gnome-hotkey
-  - hotcheat
 
 ## ROADMAP 2.0
 - current application aware

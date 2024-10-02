@@ -27,49 +27,49 @@
             buildInputs = with nixpkgs.pkgs; [
               crystal
               shards
-              blueprint-compiler
-              pcre2
-              gtk4
-              glib
-              gobject-introspection
-              libadwaita
-              libffi
-              desktop-file-utils
-              cairo
-              gdk-pixbuf
-              graphene
-              gtksourceview5
-              libxml2
-              meson
-              ninja
-              pango
-              pkg-config
               wrapGAppsHook4
-              cmake
+            #              blueprint-compiler
+            #              pcre2
+            #              gtk4
+            #              glib
+            #              gobject-introspection
+            #              libadwaita
+            #              libffi
+            #              desktop-file-utils
+            #              cairo
+            #              gdk-pixbuf
+            #              graphene
+            #              gtksourceview5
+            #              libxml2
+            #              meson
+            #              ninja
+            #              pango
+            #              pkg-config
+            #              cmake
             ];
 
             nativeBuildInputs = with nixpkgs.pkgs; [
               crystal
               shards
-              blueprint-compiler
-              pcre2
-              gtk4
-              glib
-              gobject-introspection
-              libadwaita
-              libffi
-              desktop-file-utils
-              cairo
-              gdk-pixbuf
-              graphene
-              gtksourceview5
-              libxml2
-              meson
-              ninja
-              pango
-              pkg-config
-              wrapGAppsHook4
-              cmake
+            #              wrapGAppsHook4
+            #              blueprint-compiler
+            #              pcre2
+            #              gtk4
+            #              glib
+            #              gobject-introspection
+            #              libadwaita
+            #              libffi
+            #              desktop-file-utils
+            #              cairo
+            #              gdk-pixbuf
+            #              graphene
+            #              gtksourceview5
+            #              libxml2
+            #              meson
+            #              ninja
+            #              pango
+            #              pkg-config
+            #              cmake
             ];
           };
         });
