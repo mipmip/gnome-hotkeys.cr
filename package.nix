@@ -11,7 +11,7 @@
 }:
 crystal.buildCrystalPackage rec {
   pname = "myhotkeys";
-  version = "0.2.6";
+  version = "0.2.7";
 
   src = ./.;
 
@@ -34,7 +34,6 @@ crystal.buildCrystalPackage rec {
   shardsFile = ./shards.nix;
   copyShardDeps = true;
 
-  #installTargets = [ "install" ];
   doInstallCheck = false;
 
   meta = with lib; {

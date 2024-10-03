@@ -4,6 +4,7 @@ require "gtk4"
 require "libadwaita"
 require "./modules/*"
 
+VERSION = {{ `shards version #{__DIR__}`.chomp.stringify }}
 
 module MyHotKeys::GtkMain
   extend self
@@ -66,6 +67,13 @@ module MyHotKeys::GtkMain
     parser.on("-x", "--with-groupnames", "Add group name to every key to make it searchable (hack)") do
       puts "with group names"
       STATE.with_group_names()
+    end
+
+    parser.on("-v", "--version", "Show version") do
+      puts("My Hotkeys Version " + VERSION  )
+      puts("https://github.com/mipmip/gnome-hotkeys.cr")
+      puts("\n© 2024 Pim Snel")
+      exit
     end
 
 # This could work like this:
