@@ -131,7 +131,7 @@ module MyHotKeys::GtkMain
     <property name="modal">True</property>
     <child>
       <object class="GtkShortcutsSection">
-        <property name="section-name">shortcuts</property>
+        <property name="section-name">My Hotkeys</property>
         <property name="max-height">#{MAX_HEIGHT.to_s}</property>
         #{innerXML}
       </object>

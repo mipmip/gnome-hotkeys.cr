@@ -41,36 +41,27 @@ make
 - [x] play in builder to find all possibilities
 - [x] change YAML to JSON class
 - [x] setup cli options
+- [x] nix derivation
+- [x] default shortcut_file
+- [x] default config file
+- [x] name: myhotkeys
+- [x] libadwaita
+- [x] icon wip
 
-- [ ] nix derivation
-
-- [ ] default shortcut_file
-- [ ] default config file
-
-- [ ] name: myhotkeys
-
-- dark mode
-- icon
+- [ ] dark mode
+- [ ] improve alignment commands
 
 - [ ] add gnome extensions and desktop shortcuts
   - [x] read settings from GIO
   - [ ] implement hide settings from conf or argument
 
-- [ ] shell releaser
 - [ ] subclass shortcutsshortcut.c
   - [ ] accel-size-group
   - [ ] title-size-group
   - [ ] new type: command
   - [ ] search match group titles for single shortcuts
 
-- [ ] subclass more
-  - [ ] make custom layout things: semi trans and more
-
-- [ ] max-height config
-- [ ] find way to clear UI cache
-
 - [ ] documentation
-- [ ] intergrate with shell extension
 - [ ] add buttons to menubar
   - [ ] about
   - [ ] configure
