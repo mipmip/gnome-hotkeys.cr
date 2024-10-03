@@ -12,6 +12,10 @@ shards:
     git: https://github.com/hugopl/harfbuzz.cr.git
     version: 0.2.0
 
+  libadwaita:
+    git: https://github.com/geopjr/libadwaita.cr.git
+    version: 1.0.0+git.commit.cffabb56e911d2a90c53c2fd14d6bd08bf5ac446
+
   pango:
     git: https://github.com/hugopl/pango.cr.git
     version: 0.3.1

@@ -14,6 +14,11 @@
     rev = "v0.2.0";
     sha256 = "06wgqxwyib5416yp53j2iwcbr3bl4jjxb1flm7z103l365par694";
   };
+  libadwaita = {
+    url = "https://github.com/geopjr/libadwaita.cr.git";
+    rev = "cffabb56e911d2a90c53c2fd14d6bd08bf5ac446";
+    sha256 = "0gcq04vgxg0vff9fcalgzq9phq0y76diihkzhlfn91bdxwkx7rl3";
+  };
   pango = {
     url = "https://github.com/hugopl/pango.cr.git";
     rev = "v0.3.1";

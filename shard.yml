@@ -12,6 +12,8 @@ dependencies:
   gtk4:
     github: hugopl/gtk4.cr
     branch: main
-
+  libadwaita:
+    github: GeopJr/libadwaita.cr
+    branch: main
 crystal: 1.4.1
 license: MIT

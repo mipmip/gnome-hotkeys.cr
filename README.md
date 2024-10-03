@@ -12,6 +12,10 @@
 
 This project is in active development. Everything can change.
 
+## Reading material
+
+https://ultimate-gtk4-crystal-guide.geopjr.dev/en/first-app/ui-design.html
+
 ## Develop
 
 ```

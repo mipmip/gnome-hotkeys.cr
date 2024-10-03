@@ -29,7 +29,9 @@
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
               gi-crystal
+              libadwaita
               crystal
+              gobject-introspection
               shards
               wrapGAppsHook4
             ];

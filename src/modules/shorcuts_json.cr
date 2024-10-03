@@ -27,7 +27,7 @@ module MyHotKeys::GtkMain
     <<-sXML
       <child>
         <object class="GtkShortcutsShortcut">
-          <property name="title"  context="shortcut window">#{description}</property>
+          <property name="title" context="shortcut window">#{description}</property>
           <property name="accelerator">#{key}</property>
         </object>
       </child>
@@ -80,6 +80,7 @@ module MyHotKeys::GtkMain
     pShortcuts = [] of String
     shortcuts.each do | shortcut|
       description = shortcut["description"].as_s
+      description = description + " (" + group["name"].as_s + ")" if STATE.with_group_names?
       shortcutXML = ""
       if shortcut.as_h.has_key?("key")
         shortcutXML = createAccelCheat(description, shortcut["key"].as_s)

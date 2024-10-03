@@ -1,7 +1,8 @@
 require "json"
 require "option_parser"
 require "gtk4"
-require "./modules/views/*"
+require "libadwaita"
+require "./modules/*"
 
 
 module MyHotKeys::GtkMain
@@ -11,6 +12,7 @@ module MyHotKeys::GtkMain
     @shortcut_file = ""
     @schemas = Hash(String,String).new
     @use_gnome_schema = false
+    @with_group_names = false
 
     def set_shortcut_file(file)
       @shortcut_file = file.path.to_s
@@ -33,6 +35,14 @@ module MyHotKeys::GtkMain
 #      NamedTuple.from(@schemas)
 #    end
 
+    def with_group_names()
+      @with_group_names = true
+    end
+
+    def with_group_names?()
+      @with_group_names
+    end
+
     def use_gnome_schema()
       @use_gnome_schema = true
     end
@@ -53,6 +63,11 @@ module MyHotKeys::GtkMain
       STATE.use_gnome_schema()
     end
 
+    parser.on("-x", "--with-groupnames", "Add group name to every key to make it searchable (hack)") do
+      puts "with group names"
+      STATE.with_group_names()
+    end
+
 # This could work like this:
 # . /bin/myhotkeys ./test.json -t "org.gnome.shell.keybindings:gnome shell" -t "org.gnome.desktop.wm.keybindings:Mutter"
 #  But I can't get the NamedTuple working dynamically
@@ -71,7 +86,7 @@ module MyHotKeys::GtkMain
     end
   end
 
-  app = Gtk::Application.new("oss.mipmip.myhotkeys", Gio::ApplicationFlags::HandlesOpen)
+  app = Adw::Application.new("oss.mipmip.myhotkeys", Gio::ApplicationFlags::HandlesOpen)
   app.activate_signal.connect(->activate(Gtk::Application))
 
   #init_arguments
